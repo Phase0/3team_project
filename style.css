@@ -324,25 +324,34 @@ button:disabled {
   height: 100%;
   pointer-events: none; /* 클릭 등 이벤트 무시 */
   overflow: hidden;
-  z-index: 9999;        /* 화면 맨 위로 */
+  z-index: 9999; /* 화면 맨 위로 */
 }
 
 /* 개별 confetti 조각 */
 .confetti {
   position: absolute;
-  top: -10px;          /* 화면 위쪽 바깥에서 시작 */
+  top: -10px; /* 화면 위쪽 바깥에서 시작 */
   width: 10px;
   height: 10px;
-  background-color: red;  /* 기본 빨강 (JS로 다른색도 줄 수 있음) */
+  background-color: red; /* 기본 빨강 (JS로 다른색도 줄 수 있음) */
   opacity: 0.8;
-  border-radius: 50%;     /* 동글동글, 원 형태 */
+  border-radius: 50%; /* 동글동글, 원 형태 */
   animation: confetti-fall 2.5s linear forwards;
 }
 
 /* 떨어지는 모션 */
 @keyframes confetti-fall {
   to {
-    transform: translateY(110vh) rotate(720deg); 
+    transform: translateY(110vh) rotate(720deg);
     /* 아래로 쭉 떨어지며 2회전 */
   }
+}
+
+/* 모든 버튼에 hover 시 확대 효과 */
+button {
+  transition: transform 0.2s ease; /* 크기 변화가 부드럽게 진행되도록 */
+}
+
+button:hover {
+  transform: scale(1.1); /* 1.1배 커지게 */
 }
