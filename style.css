@@ -1,0 +1,348 @@
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'DungGeunMo';
+  font-size: clamp(14px, 2.5vw, 28px);
+}
+
+body {
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  gap: 80px;
+
+  /* 스크롤 가능하도록 설정 */
+  overflow: auto;
+}
+
+.question-bar {
+  background-color: beige;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  /* width: 300px; */
+  /* height: clamp(1000px, 2.5vw, 1300px); */
+
+  /* 수정 */
+  width: 150px;
+  height: clamp(750px, 2.5vw, 750px);
+}
+
+#bar-header {
+  background-color: rgb(171, 212, 171);
+  color: #333;
+  /* padding: 35px; */
+
+  /* 수정 */
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#bar-header h1 {
+  font-size: clamp(10px, 2.5vw, 25px);
+  margin: 0;
+}
+
+#bar-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 70px; */
+  gap: 20px;
+
+  /* 수정 */
+  padding: 50px;
+  border-style: none;
+}
+
+#bar-main button {
+  /* width: 70px;
+  height: 70px;
+  font-size: clamp(70px, 2.5vw, 100px); */
+  color: #333;
+  background-color: #f0f0f0;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  /* 수정 */
+  width: 40px;
+  height: 40px;
+  font-size: clamp(20px, 2.5vw, 20px);
+}
+
+.quiz-container {
+  background-color: beige;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
+  /* width: clamp(1100px, 2.5vw, 1300px);
+  height: clamp(1000px, 2.5vw, 1300px); */
+
+  /* 수정 */
+  width: clamp(800px, 2.5vw, 900px);
+  height: clamp(750px, 2.5vw, 750px);
+}
+
+#quiz-header {
+  background-color: rgb(171, 212, 171);
+  color: #333;
+  padding: 20px;
+  text-align: center;
+
+  /* 수정 */
+  border-radius: 10px;
+}
+
+#quiz-header h1 {
+  font-size: clamp(30px, 2.5vw, 50px);
+  margin: 5px;
+}
+
+#quiz {
+  /* padding: 150px; */
+
+  /* 수정 */
+  padding: 75px;
+}
+
+#question {
+  /* font-size: clamp(15px, 2.5vw, 35px); */
+  /* margin-bottom: 20px; */
+  line-height: 1.5;
+  text-align: center;
+
+  /* 수정 */
+  font-size: clamp(15px, 2.5vw, 30px);
+}
+
+.options-container {
+  flex-direction: column;
+  gap: 10px;
+  /* margin-bottom: 20px; */
+
+  /* 수정 */
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.option {
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  color: #333;
+  font-size: clamp(10px, 2.5vw, 30px);
+}
+
+.option:hover {
+  background-color: #e5e5e5;
+}
+
+.option.selected {
+  background-color: rgb(214, 233, 214);
+  border-color: white;
+}
+
+.option.correct {
+  background-color: #c8f7c5;
+  border-color: #0a0;
+}
+
+.option.incorrect {
+  background-color: #f7c5c5;
+  border-color: #a00;
+}
+
+#result-message {
+  margin-bottom: 20px;
+  font-weight: 600;
+  height: 24px;
+  text-align: center;
+}
+
+.correct-message {
+  color: #0a0;
+}
+
+.incorrect-message {
+  color: #a00;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.navigation-btn,
+.submit-btn,
+.check-btn
+/*.restart-btn*/ {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  font-size: clamp(5px, 2.5vw, 25px);
+}
+
+.navigation-btn {
+  background-color: white;
+  color: #333;
+  font-size: clamp(5px, 2.5vw, 25px);
+}
+
+.navigation-btn:hover {
+  background-color: #e5e5e5;
+}
+
+.submit-btn {
+  background-color: rgb(171, 212, 171);
+  color: #333;
+  flex-grow: 1;
+}
+
+.submit-btn:hover {
+  background-color: rgb(109, 153, 109);
+}
+
+/* .restart-btn {
+  background-color: rgb(171, 212, 171);
+  color: #333;
+  width: 100%;
+} */
+
+/* 수정 */
+.check-btn {
+  background-color: rgb(171, 212, 171);
+  color: #333;
+  /* width: 100%; */
+}
+
+.restart-btn:hover {
+  background-color: rgb(109, 153, 109);
+}
+
+.hide {
+  display: none;
+}
+
+#results {
+  padding: 30px;
+  text-align: center;
+}
+
+#results h2 {
+  color: #0a325b;
+  margin-bottom: 20px;
+}
+
+#score {
+  font-weight: bold;
+  font-size: 24px;
+  color: #0a325b;
+}
+
+#summary {
+  margin: 20px 0;
+  text-align: left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 440px;
+}
+
+.summary-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.summary-item.correct {
+  border-left: 4px solid #0a0;
+  background-color: #ddf8db;
+}
+
+.summary-item.incorrect {
+  border-left: 4px solid #a00;
+  background-color: #ffe9e9;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#bg-video {
+  position: fixed; /* 스크롤해도 계속 고정 */
+  top: 0;
+  left: 0;
+  width: 100%; /* 화면 전체 너비 */
+  height: 100%; /* 화면 전체 높이 */
+  object-fit: cover; /* 잘리더라도 화면 가득 채우기 */
+  z-index: -1; /* 모든 요소 뒤로 배치 */
+  /* 클릭, 드래그 같은 이벤트를 막고 싶다면 (선택사항) */
+  pointer-events: none;
+}
+
+.answer-font-color {
+  color: #a00;
+}
+
+.answer-font-size {
+  font-size: clamp(14px, 2.5vw, 20px);
+}
+
+/* ----------------------------
+   (추가) Confetti 애니메이션 CSS
+-----------------------------*/
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* 클릭 등 이벤트 무시 */
+  overflow: hidden;
+  z-index: 9999;        /* 화면 맨 위로 */
+}
+
+/* 개별 confetti 조각 */
+.confetti {
+  position: absolute;
+  top: -10px;          /* 화면 위쪽 바깥에서 시작 */
+  width: 10px;
+  height: 10px;
+  background-color: red;  /* 기본 빨강 (JS로 다른색도 줄 수 있음) */
+  opacity: 0.8;
+  border-radius: 50%;     /* 동글동글, 원 형태 */
+  animation: confetti-fall 2.5s linear forwards;
+}
+
+/* 떨어지는 모션 */
+@keyframes confetti-fall {
+  to {
+    transform: translateY(110vh) rotate(720deg); 
+    /* 아래로 쭉 떨어지며 2회전 */
+  }
+}

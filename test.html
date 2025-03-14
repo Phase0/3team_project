@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 개발 미니 퀴즈</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <fieldset class="question-bar">
+      <div id="bar-header">
+        <h1>문제 번호</h1>
+      </div>
+      <div id="bar-main">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>10</button>
+      </div>
+    </fieldset>
+
+    <div class="quiz-container">
+      <div id="quiz-header">
+        <h1>웹 개발 미니 퀴즈</h1>
+      </div>
+
+      <div id="quiz">
+        <div id="question"></div>
+        <br /><br />
+        <div id="options" class="options-container"></div>
+        <div id="result-message"></div>
+        <div class="button-container">
+          <button id="prev-btn" class="navigation-btn">이전 문제</button>
+          <button id="next-btn" class="navigation-btn">다음 문제</button>
+          <button id="check-btn" class="check-btn">힌트</button>
+          <button id="submit-btn" class="submit-btn">최종 결과 확인</button>
+        </div>
+      </div>
+
+      <div id="results" class="hide">
+        <h2>퀴즈 결과</h2>
+        <p>총점: <span id="score"></span></p>
+        <div id="summary"></div>
+        <button id="retry-btn" class="submit-btn">다시 풀기</button>
+      </div>
+    </div>
+
+    <!-- 배경용 비디오 -->
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="214592_tiny.mp4" type="video/mp4" />
+    </video>
+
+    <!-- script.js에서 confetti 코드를 작성 -->
+    <script src="script.js"></script>
+  </body>
+</html>
